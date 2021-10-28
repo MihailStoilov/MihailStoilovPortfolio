@@ -1,0 +1,839 @@
+<?php
+if (isset($_POST["submit"])){
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $subject = $_POST["subject"];
+    $message = $_POST["message"];
+
+    $to = "mihailstoilov98@gmail.com";
+    $subject = $subject;
+
+    $message = "Email: {$email}" . $message;
+
+    // Always set content-type when sending HTML email
+    $headers = "MIME-Version: 1.0" . "\r\n";
+    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+    // More headers
+    $headers .= 'From: My Web Portfolio';
+
+    $mail = mail($to,$subject,$message,$headers);
+
+    if ($mail) {
+        echo "<script>alert('Mail Send.');</script>";
+    }
+    else{
+        echo "<script>alert('Mail Not Send.');</script>";
+    }
+  }
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mihail Stoilov | Frontend Developer</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./color-1.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+<body>
+    <!-- header start -->
+
+    <header class="header">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="logo">
+                    <a href="index.html">M</a>
+                </div>
+                <div class="hamburger-btn outer-shadow hover-in-shadow">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <!-- navigation menu -->
+    <nav class="nav-menu">
+        <div class="close-nav-menu outer-shadow hover-in-shadow">&times;</div>
+        <div class="nav-menu-inner">
+            <ul>
+                <li><a href="#home" class="link-item inner-shadow active">home</a></li>
+                <li><a href="#about" class="link-item outer-shadow hover-in-shadow">about</a></li>
+                <li><a href="#services" class="link-item outer-shadow hover-in-shadow">services</a></li>
+                <li><a href="#portfolio" class="link-item outer-shadow hover-in-shadow">portfolio</a></li>
+                <li><a href="#contact" class="link-item outer-shadow hover-in-shadow">contact</a></li>
+            </ul>
+        </div>
+        <!-- copyright text -->
+        <p class="copyright-text">&copy; 2020 Mihail Stoilov</p>
+    </nav>
+    <div class="fade-out-effect"></div>
+<!-- navigation menu end -->
+
+<!-- home section start -->
+    <section class="home-section section active" id="home">
+        <!-- effect wrap start -->
+        <div class="effect-wrap">
+            <div class="effect effect-1">
+            </div>
+            <div class="effect effect-2">
+                <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+            <div class="effect effect-3"></div>
+            <div class="effect effect-4"></div>
+            <div class="effect effect-5">
+                <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+        </div>
+        <!-- effect wrap end -->
+        <div class="container">
+            <div class="row full-screen align-items-center">
+                <div class="home-text">
+                    <p>Hello</p>
+                    <h2>I'm Mihail</h2>
+                    <h1>Web Designer & Developer</h1>
+                    <a href="#about" class="link-item btn-1 outer-shadow hover-in-shadow">More About Me</a>
+                </div>
+                <div class="home-img">
+                    <div class="img-box inner-shadow">
+                        <img src="./PicFPortfolioCrop.jpg" class="outer-shadow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- home section end -->
+
+<!-- about section start -->
+
+<section class="about-section section" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="section-title">
+                <h2 data-heading="main info">About me</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="about-img">
+                <div class="img-box inner-shadow">
+                    <img src="./portfoliotransparent.png" alt="profilepicture" class="outer-shadow">
+                </div>
+                <!-- social media links start -->
+                <div class="social-links">
+                    <a href="#" class="outer-shadow hover-in-shadow"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="outer-shadow hover-in-shadow"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="outer-shadow hover-in-shadow"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="outer-shadow hover-in-shadow"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <!-- social media links end -->
+            </div>
+            <div class="about-info">
+                <p><span>Hi! My name is Mihail Stoilov. I am a student in Digital Marketing & Web Design, master's degree. </span>I love working on projects that bring value to people, while at the same time I am developing and 
+                    improving my web programming and designing skills. I’m very persistent and always finish what I start.<p>
+                    No matter of the difficulty of the challenges that come along the way. I am open-minded, friendly and 
+                    have a great sense of humor, which makes me a perfect fit for every teamwork environment.</p>
+                
+                <a href="./Mihail Stoilov CV.pdf" target="_blank" class="outer-shadow hover-in-shadow btn-1">Download CV</a>
+                <a href="#contact" class="link-item outer-shadow hover-in-shadow btn-1">Hire Me</a>
+            </div>
+        </div>
+        <!-- about tabs start -->
+        <div class="row">
+            <div class="about-tabs">
+                <span class="tab-item outer-shadow active" data-target=".skills">skills</span>
+                <span class="tab-item" data-target=".experience">Language</span>
+                <span class="tab-item" data-target=".education">education</span>
+            </div>
+        </div>
+        <!-- about tabs end -->
+
+        <!-- skills start -->
+
+        <div class="row">
+            <div class="skills tab-content active">
+                <div class="row">
+                    <!-- skill item start -->
+                    <div class="skill-item">
+                        <p>HTML</p>
+                        <div class="progress inner-shadow">
+                            <div class="progress-bar" style="width: calc(80% - 14px);">
+                                <span>80%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- skill item end -->
+                     <!-- skill item start -->
+                     <div class="skill-item">
+                        <p>CSS</p>
+                        <div class="progress inner-shadow">
+                            <div class="progress-bar" style="width: calc(80% - 14px);">
+                                <span>80%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- skill item end -->
+                     <!-- skill item start -->
+                     <div class="skill-item">
+                        <p>JavaScript</p>
+                        <div class="progress inner-shadow">
+                            <div class="progress-bar" style="width: calc(60% - 14px);">
+                                <span>60%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- skill item end -->
+                    <!-- skill item start -->
+                    <div class="skill-item">
+                        <p>Bootstrap</p>
+                        <div class="progress inner-shadow">
+                            <div class="progress-bar" style="width: calc(70% - 14px);">
+                                <span>70%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- skill item end -->
+                    <!-- skill item start -->
+                    <div class="skill-item">
+                        <p>Photoshop</p>
+                        <div class="progress inner-shadow">
+                            <div class="progress-bar" style="width: calc(60% - 14px);">
+                                <span>60%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- skill item end -->
+                    
+                    <!-- skill item start -->
+                    <div class="skill-item">
+                        <p>PHP</p>
+                        <div class="progress inner-shadow">
+                            <div class="progress-bar" style="width: calc(30% - 14px);">
+                                <span>30%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- skill item end -->
+                    <!-- skill item start -->
+                    <div class="skill-item">
+                        <p>MySQL</p>
+                        <div class="progress inner-shadow">
+                            <div class="progress-bar" style="width: calc(30% - 14px);">
+                                <span>30%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- skill item end -->
+                </div>
+            </div>
+        </div>
+        <!-- skills end -->
+        <!-- experience start -->
+        <div class="row">
+            <div class="experience tab-content">
+                <div class="row">
+                    <div class="timeline">
+                        <div class="row">
+                            <!-- timeline item start -->
+                            <div class="timeline-item">
+                                <div class="timeline-item-inner outer-shadow">
+                                    <i class="fas fa-comments icon"></i>
+                                    <!-- <span>Jun, 2021</span> -->
+                                    <h3>English</h3>
+                                    <!-- <h4>Company name</h4> -->
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                </div>
+                            </div>
+                            <!-- timeline item end -->
+                            <!-- timeline item start -->
+                            <div class="timeline-item">
+                                <div class="timeline-item-inner outer-shadow">
+                                    <i class="fas fa-comments icon"></i>
+                                    <!-- <span>Jun, 2021</span> -->
+                                    <h3>Bulgarian</h3>
+                                    <!-- <h4>Company name</h4> -->
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                </div>
+                            </div>
+                            <!-- timeline item end -->
+                            <!-- timeline item start -->
+                            <div class="timeline-item">
+                                <div class="timeline-item-inner outer-shadow">
+                                    <i class="fas fa-comments icon"></i>
+                                    <!-- <span>Jun, 2021</span> -->
+                                    <h3>Macedonian</h3>
+                                    <!-- <h4>Company name</h4> -->
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                </div>
+                            </div>
+                            <!-- timeline item end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- experience end -->
+        <!-- education start -->
+        <div class="row">
+            <div class="education tab-content">
+                <div class="row">
+                    <div class="timeline">
+                        <div class="row">
+                            <!-- timeline item start -->
+                            <div class="timeline-item">
+                                <div class="timeline-item-inner outer-shadow">
+                                    <i class="fas fa-graduation-cap icon"></i>
+                                    <span>Nov, 2021 - Present</span>
+                                    <h3>Master in Digital Marketing & Web Design</h3>
+                                    <h4>University of Library Studies and Information Technologies (UNIBIT)</h4>
+                                   
+                                </div>
+                            </div>
+                            <!-- timeline item end -->
+                            <!-- timeline item start -->
+                            <div class="timeline-item">
+                                <div class="timeline-item-inner outer-shadow">
+                                    <i class="fas fa-graduation-cap icon"></i>
+                                    <span>Oct, 2017 - July, 2021</span>
+                                    <h3>Graduated at Information Technologies</h3>
+                                    <h4>University of Library Studies and Information Technologies (UNIBIT)</h4>
+                                    
+                                </div>
+                            </div>
+                            <!-- timeline item end -->
+                            <!-- timeline item start -->
+                            <div class="timeline-item">
+                                <div class="timeline-item-inner outer-shadow">
+                                    <i class="fas fa-graduation-cap icon"></i>
+                                    <span>Sep, 2013 - May, 2017</span>
+                                    <h3>High School - Computer Sciences</h3>
+                                    <h4>Mihajlo Pupin - Skopje</h4>
+                                    
+                                </div>
+                            </div>
+                            <!-- timeline item end -->
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- education end -->
+    </div>
+</section>
+
+<!-- about section end -->
+
+<!-- section services start -->
+
+<section class="service-section section" id="services">
+    <div class="container">
+        <div class="row">
+            <div class="section-title">
+                <h2 data-heading="Services">What i do</h2>
+            </div>
+        </div>
+        <div class="row">
+            <!-- service item start -->
+            <div class="service-item">
+                <div class="service-item-inner outer-shadow">
+                    <div class="icon inner-shadow">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Responsive Design</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut, veniam.</p>
+                </div>
+            </div>
+            <!-- service item end -->
+            <!-- service item start -->
+            <div class="service-item">
+                <div class="service-item-inner outer-shadow">
+                    <div class="icon inner-shadow">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Web Design</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut, veniam.</p>
+                </div>
+            </div>
+            <!-- service item end -->
+            <!-- service item start -->
+            <div class="service-item">
+                <div class="service-item-inner outer-shadow">
+                    <div class="icon inner-shadow">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Graphic Design</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut, veniam.</p>
+                </div>
+            </div>
+            <!-- service item end -->
+            <!-- service item start -->
+            <div class="service-item">
+                <div class="service-item-inner outer-shadow">
+                    <div class="icon inner-shadow">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Clean code</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut, veniam.</p>
+                </div>
+            </div>
+            <!-- service item end -->
+            
+        </div>
+    </div>
+</section>
+
+<!-- section services end -->
+<!-- portfolio section start -->
+<section class="portfolio-section section" id="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="section-title">
+            <h2 data-heading="portfolio">Latest Works</h2>
+        </div>
+    </div>
+    <!-- portfolio filter start -->
+    <div class="row">
+        <div class="portfolio-filter" data-category="web-application">
+            
+            
+        </div>
+    </div>
+    <!-- portfolio filter end -->
+    <!-- portfolio items start -->
+    <div class="row portfolio-items">
+        <!-- portfolio item start -->
+            <div class="portfolio-item" onclick="openPopup()"data-category="web-application">
+                <div class="portfolio-item-inner outer-shadow">
+                    <div class="portfolio-item-img">
+                        <img src="./architecture1.png" alt="portfolio" data-screenshots="./architecture.png">
+                        <!-- btn project view -->
+                        <span class="view-project">view project</span>
+                    </div>
+                    <p class="portfolio-item-title">Architecture Design</p>
+                    <!-- porfolio item details start -->
+                    <div class="portfolio-item-details">
+                        <div class="row">
+                            <div class="description">
+                                <h3>Project Brief:</h3>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium minima ut explicabo? Laboriosam perspiciatis ipsa nesciunt quaerat hic</p>
+                            </div>
+                            <div class="info">
+                                <h3>Project info</h3>
+                                <ul>
+                                    <li>Date - <span>2020</span></li>
+                                    <li>Client - <span>xyz</span></li>
+                                    <li>Tools - <span>HTML, CSS, JavaScript</span></li>
+                                    <li>Web - <span><a href="#">www.domain.com</a></span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- portfolio item end -->
+        <!-- portfolio item start -->
+        <div class="portfolio-item"onclick="openPopupTravel()" data-category="web-application">
+            <div class="portfolio-item-inner outer-shadow">
+                <div class="portfolio-item-img">
+                    <img src="./travel1.png" alt="portfolio" data-screenshots="./travel.png">
+                    <!-- btn project view -->
+                    <span class="view-project">view project</span>
+                </div>
+                <p class="portfolio-item-title">Travel WebSite</p>
+                <!-- porfolio item details start -->
+                <div class="portfolio-item-details">
+                    <div class="row">
+                        <div class="description">
+                            <h3>Project Brief:</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium minima ut explicabo? Laboriosam perspiciatis ipsa nesciunt quaerat hic </p>
+                        </div>
+                        <div class="info">
+                            <h3>Project info</h3>
+                            <ul>
+                                <li>Date - <span>2020</span></li>
+                                <li>Client - <span>xyz</span></li>
+                                <li>Tools - <span>HTML, CSS, JavaScript</span></li>
+                                <li>Web - <span><a href="#">www.domain.com</a></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- portfolio item end -->
+    <!-- portfolio item start -->
+    <div class="portfolio-item" onclick="openPopupUni()" data-category="web-application">
+        <div class="portfolio-item-inner outer-shadow">
+            <div class="portfolio-item-img">
+                <img src="./University1.png" alt="portfolio" data-screenshots="./University">
+                <!-- btn project view -->
+                <span class="view-project">view project</span>
+            </div>
+            <p class="portfolio-item-title">University</p>
+            <!-- porfolio item details start -->
+            <div class="portfolio-item-details">
+                <div class="row">
+                    <div class="description">
+                        <h3>Project Brief:</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium minima ut explicabo? Laboriosam perspiciatis ipsa nesciunt quaerat hic</p>
+                    </div>
+                    <div class="info">
+                        <h3>Project info</h3>
+                        <ul>
+                            <li>Date - <span>2020</span></li>
+                            <li>Client - <span>xyz</span></li>
+                            <li>Tools - <span>HTML, CSS, JavaScript</span></li>
+                            <li>Web - <span><a href="#">www.domain.com</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- portfolio item end -->
+<!-- portfolio item start -->
+<div class="portfolio-item" onclick="openPopupFoods()">
+    <div class="portfolio-item-inner outer-shadow">
+        <div class="portfolio-item-img">
+            <img src="./foods1.png" alt="portfolio" data-screenshots="./foods.png">
+            <!-- btn project view -->
+            <span class="view-project">view project</span>
+        </div>
+        <p class="portfolio-item-title">Foods</p>
+        <!-- porfolio item details start -->
+        <div class="portfolio-item-details">
+            <div class="row">
+                <div class="description">
+                    <h3>Project Brief:</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium minima ut explicabo? Laboriosam perspiciatis ipsa nesciunt quaerat hic </p>
+                </div>
+                <div class="info">
+                    <h3>Project info</h3>
+                    <ul>
+                        <li>Date - <span>2020</span></li>
+                        <li>Client - <span>xyz</span></li>
+                        <li>Tools - <span>HTML, CSS, JavaScript</span></li>
+                        <li>Web - <span><a href="#">www.domain.com</a></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- portfolio item end -->
+<!-- portfolio item start -->
+<div class="portfolio-item" onclick="openPopupPortfolio()">
+    <div class="portfolio-item-inner outer-shadow">
+        <div class="portfolio-item-img">
+            <img src="./portfolio1.png" alt="portfolio" data-screenshots="./myportfolio.png">
+            <!-- btn project view -->
+            <span class="view-project">view project</span>
+        </div>
+        <p class="portfolio-item-title">MyPortfolio</p>
+        <!-- porfolio item details start -->
+        <div class="portfolio-item-details">
+            <div class="row">
+                <div class="description">
+                    <h3>Project Brief:</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium minima ut explicabo? Laboriosam perspiciatis ipsa nesciunt quaerat hic </p>
+                </div>
+                <div class="info">
+                    <h3>Project info</h3>
+                    <ul>
+                        <li>Date - <span>2020</span></li>
+                        <li>Client - <span>xyz</span></li>
+                        <li>Tools - <span>HTML, CSS, JavaScript</span></li>
+                        <li>Web - <span><a href="#">www.domain.com</a></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- portfolio item end -->
+    </div>
+    <!-- portfolio items end -->
+    </div>
+</section>
+<!-- portfolio section end -->
+
+<!-- contact section start -->
+<section class="contact-section section" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="section-title">
+                <h2 data-heading="contact">Get In Touch</h2>
+            </div>
+        </div>
+        <div class="row">
+            <!-- contact item start -->
+            <div class="contact-item">
+                <div class="contact-item-inner outer-shadow">
+                    <i class="fas fa-phone"></i>
+                    <span>Phone</span>
+                    <p>+359 87 990 3115</p>
+                </div>
+            </div>
+            <!-- contact item end -->
+            <!-- contact item start -->
+            <div class="contact-item">
+                <div class="contact-item-inner outer-shadow">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email</span>
+                    <p>mihailstoilov98@gmail.com</p>
+                </div>
+            </div>
+            <!-- contact item end -->
+            <!-- contact item start -->
+            <div class="contact-item">
+                <div class="contact-item-inner outer-shadow">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Address</span>
+                    <p>Sofia, Bulgaria</p>
+                </div>
+            </div>
+            <!-- contact item end -->
+        </div>
+        <div class="row">
+            <div class="contact-form">
+                <form action="" method="post">
+                    <div class="row">
+                        <div class="w-50">
+                            <div class="input-group outer-shadow hover-in-shadow">
+                                <input type="text" name="name" placeholder="Name" class="input-control">
+                            </div>
+                            <div class="input-group outer-shadow hover-in-shadow">
+                                <input type="text" name="email" placeholder="Email" class="input-control">
+                            </div>
+                            <div class="input-group outer-shadow hover-in-shadow">
+                                <input type="text" name="subject" placeholder="Subject" class="input-control">
+                            </div>
+                        </div>
+                        <div class="w-50">
+                            <div class="input-group outer-shadow hover-in-shadow">
+                                <textarea class="input-control" name="message" placeholder="Message"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="submit-btn">
+                            <button type="submit" name="submit" class="btn-1 outer-shadow hover-in-shadow">Send Message</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- contact section end -->
+
+<!-- portfolio popup start -->
+<div class="pp portfolio-popup" id="portfolioPopup">
+    <div class="pp-details">
+        <div class="pp-details-inner">
+            <div class="pp-title">
+                <h2>Architecture Design</h2>
+                <p>Category - <span class="pp-project-category">Web Aplication</span></p>
+            </div>
+            <div class="pp-project-details">
+                <div class="row">
+                    <div class="description">
+                        <h3>Project Brief:</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium minima ut explicabo? Laboriosam perspiciatis ipsa nesciunt quaerat hic </p>
+                    </div>
+                    <div class="info">
+                        <h3>Project info</h3>
+                        <ul>
+                            <li>Date - <span>2020</span></li>
+                            <li>Client - <span>xyz</span></li>
+                            <li>Tools - <span>HTML, CSS, JavaScript</span></li>
+                            <li>Web - <span><a href="#">www.domain.com</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pp-main">
+        <div class="pp-main-inner">
+            <div class="pp-project-details-btn outer-shadow hover-in-shadow">Project Details <i class="fas fa-plus"></i></div>
+            <div class="pp-close outer-shadow hover-in-shadow" id="closePop" onclick="closePopup()">&times;</div>
+            <img src="./architecture.png" class="pp-img outer-shadow">
+            <div class="pp-counter">
+                1 of 5
+            </div>
+        </div>
+        
+    </div>
+</div>
+<!-- portfolio popup end -->
+<!-- portfolio popup start -->
+<div class="pp portfolio-popup" id="portfolioPopupTravel">
+    <div class="pp-details">
+        <div class="pp-details-inner">
+            <div class="pp-title">
+                <h2>Travel</h2>
+                <p>Category - <span class="pp-project-category">Web Aplication</span></p>
+            </div>
+            <div class="pp-project-details">
+                <div class="row">
+                    <div class="description">
+                        <h3>Project Brief:</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium minima ut explicabo? Laboriosam perspiciatis ipsa nesciunt quaerat hic </p>
+                    </div>
+                    <div class="info">
+                        <h3>Project info</h3>
+                        <ul>
+                            <li>Date - <span>2020</span></li>
+                            <li>Client - <span>xyz</span></li>
+                            <li>Tools - <span>HTML, CSS, JavaScript</span></li>
+                            <li>Web - <span><a href="#">www.domain.com</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pp-main">
+        <div class="pp-main-inner">
+            <div class="pp-project-details-btn outer-shadow hover-in-shadow">Project Details <i class="fas fa-plus"></i></div>
+            <div class="pp-close outer-shadow hover-in-shadow" id="closePop" onclick="closePopup()">&times;</div>
+            <img src="./travel.png" class="pp-img outer-shadow">
+            <div class="pp-counter">
+                2 of 5
+            </div>
+        </div>
+        
+    </div>
+</div>
+<!-- portfolio popup end -->
+<!-- portfolio popup start -->
+<div class="pp portfolio-popup" id="portfolioPopupUni">
+    <div class="pp-details">
+        <div class="pp-details-inner">
+            <div class="pp-title">
+                <h2>University</h2>
+                <p>Category - <span class="pp-project-category">Web Aplication</span></p>
+            </div>
+            <div class="pp-project-details">
+                <div class="row">
+                    <div class="description">
+                        <h3>Project Brief:</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium minima ut explicabo? Laboriosam perspiciatis ipsa nesciunt quaerat hic </p>
+                    </div>
+                    <div class="info">
+                        <h3>Project info</h3>
+                        <ul>
+                            <li>Date - <span>2020</span></li>
+                            <li>Client - <span>xyz</span></li>
+                            <li>Tools - <span>HTML, CSS, JavaScript</span></li>
+                            <li>Web - <span><a href="#">www.domain.com</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pp-main">
+        <div class="pp-main-inner">
+            <div class="pp-project-details-btn outer-shadow hover-in-shadow">Project Details <i class="fas fa-plus"></i></div>
+            <div class="pp-close outer-shadow hover-in-shadow" id="closePop" onclick="closePopup()">&times;</div>
+            <img src="./University.png" class="pp-img outer-shadow">
+            <div class="pp-counter">
+                3 of 5
+            </div>
+        </div>
+        
+    </div>
+</div>
+<!-- portfolio popup end -->
+<!-- portfolio popup start -->
+<div class="pp portfolio-popup" id="portfolioPopupFoods">
+    <div class="pp-details">
+        <div class="pp-details-inner">
+            <div class="pp-title">
+                <h2>Foods</h2>
+                <p>Category - <span class="pp-project-category">Web Aplication</span></p>
+            </div>
+            <div class="pp-project-details">
+                <div class="row">
+                    <div class="description">
+                        <h3>Project Brief:</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium minima ut explicabo? Laboriosam perspiciatis ipsa nesciunt quaerat hic </p>
+                    </div>
+                    <div class="info">
+                        <h3>Project info</h3>
+                        <ul>
+                            <li>Date - <span>2020</span></li>
+                            <li>Client - <span>xyz</span></li>
+                            <li>Tools - <span>HTML, CSS, JavaScript</span></li>
+                            <li>Web - <span><a href="#">www.domain.com</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pp-main">
+        <div class="pp-main-inner">
+            <div class="pp-project-details-btn outer-shadow hover-in-shadow">Project Details <i class="fas fa-plus"></i></div>
+            <div class="pp-close outer-shadow hover-in-shadow" id="closePop" onclick="closePopup()">&times;</div>
+            <img src="./foods.png" class="pp-img outer-shadow">
+            <div class="pp-counter">
+                4 of 5
+            </div>
+        </div>
+        
+    </div>
+</div>
+<!-- portfolio popup end -->
+<!-- portfolio popup start -->
+<div class="pp portfolio-popup" id="portfolioPopupPortfolio">
+    <div class="pp-details">
+        <div class="pp-details-inner">
+            <div class="pp-title">
+                <h2>MyPortfolio</h2>
+                <p>Category - <span class="pp-project-category">Web Aplication</span></p>
+            </div>
+            <div class="pp-project-details">
+                <div class="row">
+                    <div class="description">
+                        <h3>Project Brief:</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium minima ut explicabo? Laboriosam perspiciatis ipsa nesciunt quaerat hic </p>
+                    </div>
+                    <div class="info">
+                        <h3>Project info</h3>
+                        <ul>
+                            <li>Date - <span>2020</span></li>
+                            <li>Client - <span>xyz</span></li>
+                            <li>Tools - <span>HTML, CSS, JavaScript</span></li>
+                            <li>Web - <span><a href="#">www.domain.com</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pp-main">
+        <div class="pp-main-inner">
+            <div class="pp-project-details-btn outer-shadow hover-in-shadow"><a href="https://mihailstoilov.github.io/Webportfolio/" target="_blank">Project Details</a><i class="fas fa-plus"></i></div>
+            <div class="pp-close outer-shadow hover-in-shadow" id="closePop" onclick="closePopup()">&times;</div>
+            <img src="./myportfolio.png" class="pp-img outer-shadow">
+            <div class="pp-counter">
+                5 of 5
+            </div>
+        </div>
+        
+    </div>
+</div>
+<!-- portfolio popup end -->
+
+
+
+
+    <script src="./script.js"></script>
+</body>
+</html>
